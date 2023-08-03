@@ -38,10 +38,12 @@ deleteBtn.addEventListener("dblclick", function(){
 
 
 inputBtn.addEventListener("click", function() {
-    myLeads.push(inputEl.value);
-    inputEl.value="";
-    localStorage.setItem("myLeads", JSON.stringify(myLeads));
-    renderLeads(myLeads);
+    if(inputEl.value!=""){
+         myLeads.push(inputEl.value);
+        inputEl.value="";
+        localStorage.setItem("myLeads", JSON.stringify(myLeads));
+        renderLeads(myLeads);
+    }
 })
 
 
